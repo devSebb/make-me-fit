@@ -1,6 +1,12 @@
 class UserDataController < ApplicationController
+  before_action :authenticate_user!, only: [ :create ]
+
   def index
-    @user_data = UserDatum.all
+    @user_data = current_user.user_datum
+    if @user_data.nil?
+      flash[:notice] = "You haven't created your user data yet."
+      redirect_to new_user_datum_path
+    end
   end
 
   def show
@@ -23,17 +29,15 @@ class UserDataController < ApplicationController
     @user_data.assign_attributes(user_data_params)
     @user_data.step = @step
 
-    Rails.logger.debug "Step #{@step} data: #{@user_data.attributes.inspect}"
-
     if @user_data.valid?
       if @step < 3
         session[:user_data] = @user_data.attributes.except("id", "created_at", "updated_at", "user_id")
         redirect_to new_user_datum_path(step: @step + 1)
       else
-        @user_data.user = current_user if user_signed_in?
+        @user_data.user = current_user
         if @user_data.save
           session.delete(:user_data)
-          redirect_to @user_data, notice: "User data was successfully created."
+          redirect_to user_data_path(@user_data), notice: "User data was successfully created."
         else
           render :new, status: :unprocessable_entity
         end
@@ -63,22 +67,30 @@ class UserDataController < ApplicationController
   end
 
   def next_step
-    @user_data = UserDatum.new(user_data_params)
     @step = params[:step].to_i
-    @step += 1
-    render turbo_stream: turbo_stream.replace("step#{@step - 1}", partial: "step#{@step}", locals: { user_data: @user_data })
+    @user_data = UserDatum.new(session[:user_data] || {})
+    @user_data.assign_attributes(user_data_params)
+    @user_data.step = @step
+
+    if @user_data.valid?
+      session[:user_data] = @user_data.attributes.except("id", "created_at", "updated_at", "user_id")
+      redirect_to new_user_datum_path(step: @step + 1)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def previous_step
-    @user_data = UserDatum.new(user_data_params)
     @step = params[:step].to_i
+    @user_data = UserDatum.new(session[:user_data] || {})
+    @user_data.assign_attributes(user_data_params)
     @step -= 1
-    render turbo_stream: turbo_stream.replace("step#{@step + 1}", partial: "step#{@step}", locals: { user_data: @user_data })
+    render turbo_stream: turbo_stream.replace("user_data_form", partial: "form", locals: { user_data: @user_data, step: @step })
   end
 
   private
 
   def user_data_params
-    params.require(:user_datum).permit(:age, :gender, :current_weight, :activity_level, :workout_type, :fitness_goal, :food_preferences, :count_meals, :snacks)
+    params.require(:user_datum).permit(:age, :gender, :current_weight, :activity_level, :workout_type, :fitness_goal, :food_preferences, :count_meals)
   end
 end

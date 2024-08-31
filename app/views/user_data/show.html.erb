@@ -1,5 +1,6 @@
 <div>
-  <h1 class="font-bold text-4xl">UserData#show</h1>
-  <p>Find me in app/views/user_data/show.html.erb</p>
+  <h1 class="font-bold text-4xl">
+    <%= @user_data.id %>
+  </h1>
   <%= render "show", user_data: @user_data %>
 </div>

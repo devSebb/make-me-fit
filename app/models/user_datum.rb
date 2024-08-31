@@ -1,5 +1,6 @@
 class UserDatum < ApplicationRecord
-  belongs_to :user, optional: true  # Add 'optional: true' if user association is not required at this stage
+  belongs_to :user, optional: true
+  validates :user_id, uniqueness: true, allow_nil: true
 
   attr_accessor :step
 

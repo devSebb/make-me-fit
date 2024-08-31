@@ -3,8 +3,8 @@ Rails.application.routes.draw do
 
   root "pages#home"
 
-  resources :meal_plans
-  resources :user_data do
+  resources :meal_plans, only: [ :show ]
+  resources :user_data, only: [ :index, :show, :new, :create ] do
     collection do
       post "next_step"
       post "previous_step"
