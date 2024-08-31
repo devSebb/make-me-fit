@@ -1,0 +1,15 @@
+  <div>
+    <%= form.label :activity_level, style: "display: block" %>
+    <%= form.number_field :activity_level %>
+  </div>
+  <div>
+    <%= form.label :workout_type, style: "display: block" %>
+    <%= form.text_field :workout_type %>
+  </div>
+  <div>
+    <%= form.label :fitness_goal, style: "display: block" %>
+    <%= form.text_field :fitness_goal %>
+  </div>
+  <%= form.hidden_field :age %>
+  <%= form.hidden_field :gender %>
+  <%= form.hidden_field :current_weight %>

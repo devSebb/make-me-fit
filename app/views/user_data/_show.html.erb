@@ -1,0 +1,12 @@
+<%= turbo_frame_tag "user_data_form" do %>
+  <h1>User Data</h1>
+  <p>Age: <%= user_data.age %></p>
+  <p>Gender: <%= user_data.gender %></p>
+  <p>Current Weight: <%= user_data.current_weight %></p>
+  <p>Activity Level: <%= user_data.activity_level %></p>
+  <p>Workout Type: <%= user_data.workout_type %></p>
+  <p>Fitness Goal: <%= user_data.fitness_goal %></p>
+  <p>Food Preferences: <%= user_data.food_preferences %></p>
+  <p>Count Meals: <%= user_data.count_meals %></p>
+  <p>Snacks: <%= user_data.snacks ? 'Yes' : 'No' %></p>
+<% end %>

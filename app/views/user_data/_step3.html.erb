@@ -1,0 +1,19 @@
+  <div>
+    <%= form.label :food_preferences, style: "display: block" %>
+    <%= form.text_field :food_preferences %>
+  </div>
+  <div>
+    <%= form.label :count_meals, style: "display: block" %>
+    <%= form.number_field :count_meals %>
+  </div>
+  <div>
+    <%= form.label :snacks, style: "display: block" %>
+    <%= form.check_box :snacks %>
+    <%= form.label :snacks, "Yes" %>
+  </div>
+  <%= form.hidden_field :age %>
+  <%= form.hidden_field :gender %>
+  <%= form.hidden_field :current_weight %>
+  <%= form.hidden_field :activity_level %>
+  <%= form.hidden_field :workout_type %>
+  <%= form.hidden_field :fitness_goal %>
