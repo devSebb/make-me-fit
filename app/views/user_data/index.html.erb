@@ -21,7 +21,7 @@
             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"><%= @user_data.current_weight %> lbs</dd>
           </div>
           <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt class="text-sm font-medium text-gray-500">Activity Level</dt>
+            <dt class="text-sm font-medium text-gray-500">Workouts per week</dt>
             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"><%= @user_data.activity_level %></dd>
           </div>
           <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -37,7 +37,7 @@
             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"><%= @user_data.food_preferences %></dd>
           </div>
           <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt class="text-sm font-medium text-gray-500">Count Meals</dt>
+            <dt class="text-sm font-medium text-gray-500">Amount of Meals per day</dt>
             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"><%= @user_data.count_meals %></dd>
           </div>
           <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -45,6 +45,9 @@
             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"><%= @user_data.snacks ? 'Yes' : 'No' %></dd>
           </div>
 
+          <div class="mt-8">
+            <%= button_to "Generate Meal Plan", meal_plans_path, method: :post, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+          </div>
         </dl>
       </div>
     </div>

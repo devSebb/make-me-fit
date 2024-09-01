@@ -1,4 +1,21 @@
-<div>
-  <h1 class="font-bold text-4xl">MealPlans#show</h1>
-  <p>Find me in app/views/meal_plans/show.html.erb</p>
+<div class="container mx-auto px-4 py-8" data-controller="nutrition">
+  <input type="hidden" data-nutrition-target="mealPlan" data-id="<%= @meal_plan.id %>">
+
+  <h1 class="text-3xl font-bold mb-6 text-gray-800">Your Personalized Meal Plan</h1>
+
+  <div class="bg-white shadow-md rounded-lg overflow-hidden mb-8">
+    <div class="px-6 py-4">
+      <h2 class="text-xl font-semibold mb-4 text-gray-700">Meal Plan Details</h2>
+      <pre data-nutrition-target="mealPlan" class="bg-gray-100 p-4 rounded text-sm font-mono overflow-x-auto"></pre>
+    </div>
+  </div>
+
+  <div class="bg-white shadow-md rounded-lg overflow-hidden">
+    <div class="px-6 py-4">
+      <h2 class="text-xl font-semibold mb-4 text-gray-700">Weekly Nutrition Plan</h2>
+      <div data-nutrition-target="nutritionPlan" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- The content will be inserted here by the Stimulus controller -->
+      </div>
+    </div>
+  </div>
 </div>
