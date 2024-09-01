@@ -3,7 +3,9 @@
     <%= link_to "Home", root_path, class: "text-white text-lg font-bold hover:text-purple-200" %>
     <% if user_signed_in? %>
       <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "text-white text-lg font-bold hover:text-purple-200 bg-transparent" %>
-      <%= link_to "View My Data", user_data_path, class: "text-white text-lg font-bold hover:text-purple-200" %>
+      <% if current_user.user_datum.present? %>
+        <%= link_to "View My Data", user_data_path(current_user.user_datum), class: "text-white text-lg font-bold hover:text-purple-200" %>
+      <% end %>
       <% if current_user.meal_plan.present? %>
         <%= link_to "View My Meal Plan", meal_plan_path(current_user.meal_plan), class: "text-white text-lg font-bold hover:text-purple-200" %>
       <% end %>
