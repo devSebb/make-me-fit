@@ -1,14 +1,14 @@
   <div>
-    <%= form.label :activity_level, style: "display: block" %>
+    <%= form.label "Activity Level - How many times do you workout in a week?", style: "display: block" %>
     <%= form.number_field :activity_level %>
   </div>
   <div>
-    <%= form.label :workout_type, style: "display: block" %>
-    <%= form.text_field :workout_type %>
+    <%= form.label "Workout Type - What type of workout do you prefer?", style: "display: block" %>
+    <%= form.select :workout_type, options_for_select([['Cardio', 'Cardio'], ['Strength Training', 'Strength Training'], ['Swimming', 'Swimming'], ['Martial Arts', 'Martial Arts'], ['Aerobics', 'Aerobics'], ['Dance', 'Dance'], ['Calisthenics', 'Calisthenics'], ['Other', 'Other'], ['Hiking', 'Hiking'], ['Yoga', 'Yoga'], ['Pilates', 'Pilates'], ['Running', 'Running'], ['Biking', 'Biking'], ['Walking', 'Walking'], ['HIIT', 'HIIT']]) %>
   </div>
   <div>
     <%= form.label :fitness_goal, style: "display: block" %>
-    <%= form.text_field :fitness_goal %>
+    <%= form.select :fitness_goal, options_for_select([['Lose Weight', 'Lose Weight'], ['Gain Mass', 'Gain Mass'], ['Maintain Weight', 'Maintain Weight'], ['Gain Lean Muscle', 'Gain Lean Muscle'], ['Improve Physical Health', 'Improve Physical Health'], ['General Fitness', 'General Fitness']]) %>
   </div>
   <%= form.hidden_field :age %>
   <%= form.hidden_field :gender %>
