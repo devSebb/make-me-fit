@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   root "pages#home"
 
+  get "fitness_goals", to: "pages#fitness_goals"
+
   resources :meal_plans, only: [ :show, :create ]
   resources :user_data, only: [ :index, :show, :new, :create ] do
     collection do

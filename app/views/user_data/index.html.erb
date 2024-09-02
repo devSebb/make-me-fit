@@ -1,52 +1,52 @@
-<div class="flex flex-col">
-  <h1 class="font-bold text-4xl mb-8">User Data</h1>
+<div class="flex flex-col w-2/3 mx-auto">
+  <h1 class="font-bold text-4xl mb-8 text-center">My Data</h1>
 
   <% if @user_data %>
-    <div class="bg-white shadow overflow-hidden sm:rounded-lg mb-10">
+    <div class="bg-white shadow overflow-hidden sm:rounded-lg mb-10 shadow-lg">
       <div class="px-4 py-5 sm:px-6">
-        <h3 class="text-lg leading-6 font-medium text-gray-900">Personal Information</h3>
+        <h3 class="text-lg leading-6 font-medium text-purple-700">Personal Information</h3>
       </div>
       <div class="border-t border-gray-20">
-        <dl>
-          <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dl class="divide-y divide-gray-200">
+          <div class="bg-purple-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt class="text-sm font-medium text-gray-500">Age</dt>
-            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"><%= @user_data.age %></dd>
+            <dd class="mt-1 text-sm text-gray-900 md:ml-32 sm:mt-0 sm:col-span-2"><%= @user_data.age %></dd>
           </div>
           <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt class="text-sm font-medium text-gray-500">Gender</dt>
-            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"><%= @user_data.gender %></dd>
+            <dd class="mt-1 text-sm text-gray-900 md:ml-32 sm:mt-0 sm:col-span-2"><%= @user_data.gender %></dd>
           </div>
-          <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+          <div class="bg-purple-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt class="text-sm font-medium text-gray-500">Current Weight</dt>
-            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"><%= @user_data.current_weight %> lbs</dd>
+            <dd class="mt-1 text-sm text-gray-900 md:ml-32 sm:mt-0 sm:col-span-2"><%= @user_data.current_weight %> lbs</dd>
           </div>
           <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt class="text-sm font-medium text-gray-500">Workouts per week</dt>
-            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"><%= @user_data.activity_level %></dd>
+            <dd class="mt-1 text-sm text-gray-900 md:ml-32 sm:mt-0 sm:col-span-2"><%= @user_data.activity_level %></dd>
           </div>
-          <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+          <div class="bg-purple-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt class="text-sm font-medium text-gray-500">Workout Type</dt>
-            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"><%= @user_data.workout_type %></dd>
+            <dd class="mt-1 text-sm text-gray-900 md:ml-32 sm:mt-0 sm:col-span-2"><%= @user_data.workout_type %></dd>
           </div>
           <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt class="text-sm font-medium text-gray-500">Fitness Goal</dt>
-            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"><%= @user_data.fitness_goal %></dd>
+            <dd class="mt-1 text-sm text-gray-900 md:ml-32 sm:mt-0 sm:col-span-2"><%= @user_data.fitness_goal %></dd>
           </div>
-          <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+          <div class="bg-purple-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt class="text-sm font-medium text-gray-500">Food Preferences</dt>
-            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"><%= @user_data.food_preferences %></dd>
+            <dd class="mt-1 text-sm text-gray-900 md:ml-32 sm:mt-0 sm:col-span-2"><%= @user_data.food_preferences %></dd>
           </div>
           <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt class="text-sm font-medium text-gray-500">Amount of Meals per day</dt>
-            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"><%= @user_data.count_meals %></dd>
+            <dd class="mt-1 text-sm text-gray-900 md:ml-32 sm:mt-0 sm:col-span-2"><%= @user_data.count_meals %></dd>
           </div>
-          <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+          <div class="bg-purple-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt class="text-sm font-medium text-gray-500">Snacks</dt>
-            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"><%= @user_data.snacks ? 'Yes' : 'No' %></dd>
+            <dd class="mt-1 text-sm text-gray-900 md:ml-32 sm:mt-0 sm:col-span-2"><%= @user_data.snacks ? 'Yes' : 'No' %></dd>
           </div>
 
-          <div class="mt-8">
-            <%= button_to "Generate Meal Plan", meal_plans_path, method: :post, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+          <div class="p-10 text-center">
+            <%= button_to "Generate Meal Plan", meal_plans_path, method: :post, class: "transition duration-300 ease-in-out bg-transparent text-purple-700 border border-purple-700 hover:bg-purple-800 hover:text-white py-2 px-4 rounded-lg" %>
           </div>
         </dl>
       </div>
