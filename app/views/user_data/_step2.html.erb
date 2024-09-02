@@ -1,15 +1,21 @@
-  <div>
+<div class="container mx-auto my-8 p-6 shadow-lg rounded-lg bg-white w-full md:w-1/3" style="box-shadow: 0 0 15px 5px rgba(116, 43, 150, 0.8);">
+  <div class="field mb-4">
     <%= form.label "Activity Level - How many times do you workout in a week?", style: "display: block" %>
-    <%= form.number_field :activity_level %>
+    <%= form.number_field :activity_level, class: "rounded-lg focus:ring-2 focus:ring-purple-800 w-full" %>
   </div>
-  <div>
+  <div class="field mb-4">
     <%= form.label "Workout Type - What type of workout do you prefer?", style: "display: block" %>
-    <%= form.select :workout_type, options_for_select([['Cardio', 'Cardio'], ['Strength Training', 'Strength Training'], ['Swimming', 'Swimming'], ['Martial Arts', 'Martial Arts'], ['Aerobics', 'Aerobics'], ['Dance', 'Dance'], ['Calisthenics', 'Calisthenics'], ['Other', 'Other'], ['Hiking', 'Hiking'], ['Yoga', 'Yoga'], ['Pilates', 'Pilates'], ['Running', 'Running'], ['Biking', 'Biking'], ['Walking', 'Walking'], ['HIIT', 'HIIT']]) %>
+    <%= form.select :workout_type, options_for_select([['Cardio', 'Cardio'], ['Strength Training', 'Strength Training'], ['Swimming', 'Swimming'], ['Martial Arts', 'Martial Arts'], ['Aerobics', 'Aerobics'], ['Dance', 'Dance'], ['Calisthenics', 'Calisthenics'], ['Other', 'Other'], ['Hiking', 'Hiking'], ['Yoga', 'Yoga'], ['Pilates', 'Pilates'], ['Running', 'Running'], ['Biking', 'Biking'], ['Walking', 'Walking'], ['HIIT', 'HIIT']]), class: "rounded-lg focus:ring-2 focus:ring-purple-800 w-full" %>
   </div>
-  <div>
+  <div class="field mb-4">
     <%= form.label :fitness_goal, style: "display: block" %>
-    <%= form.select :fitness_goal, options_for_select([['Lose Weight', 'Lose Weight'], ['Gain Mass', 'Gain Mass'], ['Maintain Weight', 'Maintain Weight'], ['Gain Lean Muscle', 'Gain Lean Muscle'], ['Improve Physical Health', 'Improve Physical Health'], ['General Fitness', 'General Fitness']]) %>
+    <%= form.select :fitness_goal, options_for_select([['Lose Weight', 'Lose Weight'], ['Gain Mass', 'Gain Mass'], ['Maintain Weight', 'Maintain Weight'], ['Gain Lean Muscle', 'Gain Lean Muscle'], ['Improve Physical Health', 'Improve Physical Health'], ['General Fitness', 'General Fitness']]), class: "rounded-lg focus:ring-2 focus:ring-purple-800 w-full" %>
+  </div>
+  <div class="mt-4 flex justify-between">
+    <%= link_to "Back", new_user_datum_path(step: 1), class: 'bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded' %>
+    <%= form.submit "Next Step", class: 'bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded' %>
   </div>
   <%= form.hidden_field :age %>
   <%= form.hidden_field :gender %>
   <%= form.hidden_field :current_weight %>
+</div>

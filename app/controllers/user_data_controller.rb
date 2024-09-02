@@ -1,5 +1,5 @@
 class UserDataController < ApplicationController
-  before_action :authenticate_user!, only: [ :create ]
+  before_action :authenticate_user!, only: [ :create, :edit, :update ]
 
   def index
     @user_data = current_user.user_datum
@@ -37,7 +37,7 @@ class UserDataController < ApplicationController
         @user_data.user = current_user
         if @user_data.save
           session.delete(:user_data)
-          redirect_to user_data_path(@user_data), notice: "User data was successfully created."
+          redirect_to user_data_path(current_user.user_datum), notice: "User data was successfully created."
         else
           render :new, status: :unprocessable_entity
         end
@@ -49,14 +49,15 @@ class UserDataController < ApplicationController
 
   def edit
     @user_data = UserDatum.find(params[:id])
+    render :index
   end
 
   def update
     @user_data = UserDatum.find(params[:id])
     if @user_data.update(user_data_params)
-      redirect_to @user_data, notice: "User data was successfully updated."
+      redirect_to user_data_path(@user_data), notice: "User data was successfully updated."
     else
-      render :edit
+      render :index, status: :unprocessable_entity
     end
   end
 
@@ -91,6 +92,6 @@ class UserDataController < ApplicationController
   private
 
   def user_data_params
-    params.require(:user_datum).permit(:age, :gender, :current_weight, :activity_level, :workout_type, :fitness_goal, :food_preferences, :count_meals)
+    params.require(:user_datum).permit(:age, :gender, :current_weight, :activity_level, :workout_type, :fitness_goal, :food_preferences, :count_meals, :snacks)
   end
 end

@@ -1,5 +1,5 @@
 <div class="flex flex-col">
-  <h1 class="font-bold text-2xl mb-8">Create User Data</h1>
+  <h1 class="font-bold text-2xl mb-8 text-center mt-5">Create User Data</h1>
   <%= turbo_frame_tag "user_data_form" do %>
     <%= render "form", user_data: @user_data, step: @step %>
   <% end %>

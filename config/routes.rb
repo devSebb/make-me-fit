@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "fitness_goals", to: "pages#fitness_goals"
 
   resources :meal_plans, only: [ :show, :create ]
-  resources :user_data, only: [ :index, :show, :new, :create ] do
+  resources :user_data, only: [ :index, :show, :new, :create, :edit, :update ] do
     collection do
       post "next_step"
       post "previous_step"
