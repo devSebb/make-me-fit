@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="h-full ">
   <head>
     <title><%= content_for(:title) || "Make Me Fit" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -21,8 +21,11 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="flex flex-col min-h-full">
     <%= render "shared/navbar" %>
+    <main class="flex-grow">
       <%= yield %>
+    </main>
+    <%= render "shared/footer" %>
   </body>
 </html>

@@ -1,26 +1,60 @@
 <div class="relative">
   <div class="absolute inset-0 bg-[#f7f7fa] opacity-50 bg-[repeating-linear-gradient(45deg,#064e3b_25%,transparent_25%,transparent_75%,#064e3b_75%,#064e3b),repeating-linear-gradient(45deg,#064e3b_25%,#f7f7fa_25%,#f7f7fa_75%,#064e3b_75%,#064e3b)] bg-[length:80px_80px] bg-[0_0,40px_40px]"></div>
-  <div class="relative z-10 flex flex-col w-full h-screen p-4">
+  <div class="relative z-10 flex flex-col w-full h-full p-4">
     <div class="h-fit w-full bg-neutral-50 bg-clip-padding backdrop-filter backdrop-blur bg-opacity-40 saturate-100 backdrop-contrast-100 p-4 rounded-lg">
       <h1 class="text-3xl font-black text-emerald-800 w-full mx-auto">
         ...working out helps with your fitness goals too
       </h1>
     </div>
-    <ul class="flex flex-col w-full gap-6 my-10">
-      <li class="text-xl">
-        Lose weight - Cardio
+    <ul class="flex flex-col w-1/2 gap-6 my-10 place-content-center mx-auto">
+      <li class="flex py-8 px-10 font-bold text-xl justify-between bg-neutral-50 bg-clip-padding backdrop-filter backdrop-blur bg-opacity-40 saturate-100 backdrop-contrast-100 p-4 rounded-lg">
+        <div class="text-2xl place-self-center">Lose weight?</div>
+        <div class="flex">
+          <%= image_tag "doodle/Doodle_Swim.svg", alt: "text", class: "h-12" %>
+          <%= image_tag "doodle/Doodle_Run.svg", alt: "text", class: "h-12" %>
+          <%= image_tag "doodle/Doodle_Boxer.svg", alt: "text", class: "h-12" %>
+        </div>
+        <div class="place-content-center">Cardio</div>
       </li>
-      <li class="text-xl">
-        Gain Mass - High weight low rep
+      <li class="flex py-8 px-10 font-bold text-xl justify-between bg-neutral-50 bg-clip-padding backdrop-filter backdrop-blur bg-opacity-40 saturate-100 backdrop-contrast-100 p-4 rounded-lg">
+        <div class="text-2xl place-content-center">Gain Mass?</div>
+        <div class="flex">
+          <%= image_tag "doodle/Doodle_Weights.svg", alt: "text", class: "h-12" %>
+          <%= image_tag "doodle/Doodle_Rock.svg", alt: "text", class: "h-12" %>
+        </div>
+        <div class="place-content-center">High weight low rep</div>
       </li>
-      <li class="text-xl">
-        Flexibilty - Yoga & Flexibility Training
+      <li class="flex py-8 px-10 font-bold text-xl justify-between bg-neutral-50 bg-clip-padding backdrop-filter backdrop-blur bg-opacity-40 saturate-100 backdrop-contrast-100 p-4 rounded-lg">
+        <div class="text-2xl place-content-center">Flexibility?</div>
+        <div class="flex">
+          <%= image_tag "doodle/Doodle_Reverse_Warrior.svg", alt: "text", class: "h-12" %>
+          <%= image_tag "doodle/Doodle_Warrior_II.svg", alt: "text", class: "h-12" %>
+        </div>
+        <div class="place-content-center">Yoga & Flexibility Training</div>
       </li>
-      <li class="text-xl">
-        Strength - Functional Training
+      <li class="flex py-8 px-10 font-bold text-xl justify-between bg-neutral-50 bg-clip-padding backdrop-filter backdrop-blur bg-opacity-40 saturate-100 backdrop-contrast-100 p-4 rounded-lg">
+        <div class="text-2xl place-content-center">Strength?</div>
+        <div class="flex">
+          <%= image_tag "doodle/Doodle_Wheelbarow.svg", alt: "text", class: "h-12" %>
+          <%= image_tag "doodle/Doodle_Javelin.svg", alt: "text", class: "h-12" %>
+        </div>
+        <div class="place-content-center">Functional Training</div>
       </li>
-      <li class="text-xl">
-        Definition - Low weight high rep
+      <li class="flex py-8 px-10 font-bold text-xl justify-between bg-neutral-50 bg-clip-padding backdrop-filter backdrop-blur bg-opacity-40 saturate-100 backdrop-contrast-100 p-4 rounded-lg">
+        <div class="text-2xl place-content-center">Definition?</div>
+        <div class="flex">
+          <%= image_tag "doodle/Doodle_Plank.svg", alt: "text", class: "h-12" %>
+          <%= image_tag "doodle/Doodle_Triangle.svg", alt: "text", class: "h-12" %>
+        </div>
+        <div class="place-content-center">Low weight high rep<br>/ Calisthenics</div>
+      </li>
+      <li class="flex py-8 px-10 font-bold text-xl justify-between bg-neutral-50 bg-clip-padding backdrop-filter backdrop-blur bg-opacity-40 saturate-100 backdrop-contrast-100 p-4 rounded-lg">
+        <div class="text-2xl place-content-center">General Fitness?</div>
+        <div class="flex">
+          <%= image_tag "doodle/Doodle_Functional.svg", alt: "text", class: "h-12" %>
+          <%= image_tag "doodle/Doodle_Sit_Up.svg", alt: "text", class: "h-12" %>
+        </div>
+        <div class="place-content-center">High intensity<br> interval training</div>
       </li>
     </ul>
   </div>
