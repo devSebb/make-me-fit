@@ -1,49 +1,49 @@
 <div class="flex flex-col w-2/3 mx-auto">
-  <h1 class="font-bold text-4xl mb-8 text-center">My Data</h1>
+  <h1 class="font-bold text-4xl my-8 text-center">My Data</h1>
 
   <% if @user_data %>
     <% if params[:action] == 'edit' %>
       <%= form_with(model: @user_data, url: user_datum_path(@user_data), method: :patch, local: true) do |form| %>
         <div class="bg-white overflow-hidden sm:rounded-lg mb-10 shadow-lg">
           <div class="px-4 py-5 sm:px-6 flex justify-between items-center">
-            <h3 class="text-lg leading-6 font-medium text-purple-700">Edit Personal Information</h3>
+            <h3 class="text-lg leading-6 font-medium text-emerald-700">Edit Personal Information</h3>
           </div>
           <div class="border-t border-gray-20">
             <dl class="divide-y divide-gray-200">
-              <div class="bg-purple-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt class="text-sm font-medium text-gray-500">Age</dt>
-                <dd class="mt-1 text-sm text-gray-900 md:ml-32 sm:mt-0 sm:col-span-2"><%= form.text_field :age, class: "form-input" %></dd>
+              <div class="bg-emerald-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500 place-content-center">Age</dt>
+                <dd class="mt-1 text-sm text-gray-900 md:ml-32 sm:mt-0 sm:col-span-2"><%= form.text_field :age, class: "form-input rounded-md" %></dd>
               </div>
               <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt class="text-sm font-medium text-gray-500">Gender</dt>
-                <dd class="mt-1 text-sm text-gray-900 md:ml-32 sm:mt-0 sm:col-span-2"><%= form.text_field :gender, class: "form-input" %></dd>
+                <dt class="text-sm font-medium text-gray-500 place-content-center">Gender</dt>
+                <dd class="mt-1 text-sm text-gray-900 md:ml-32 sm:mt-0 sm:col-span-2"><%= form.text_field :gender, class: "form-input rounded-md" %></dd>
               </div>
-              <div class="bg-purple-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt class="text-sm font-medium text-gray-500">Current Weight</dt>
-                <dd class="mt-1 text-sm text-gray-900 md:ml-32 sm:mt-0 sm:col-span-2"><%= form.text_field :current_weight, class: "form-input" %></dd>
-              </div>
-              <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt class="text-sm font-medium text-gray-500">Workouts per week</dt>
-                <dd class="mt-1 text-sm text-gray-900 md:ml-32 sm:mt-0 sm:col-span-2"><%= form.text_field :activity_level, class: "form-input" %></dd>
-              </div>
-              <div class="bg-purple-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt class="text-sm font-medium text-gray-500">Workout Type</dt>
-                <dd class="mt-1 text-sm text-gray-900 md:ml-32 sm:mt-0 sm:col-span-2"><%= form.text_field :workout_type, class: "form-input" %></dd>
+              <div class="bg-emerald-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500 place-content-center">Current Weight</dt>
+                <dd class="mt-1 text-sm text-gray-900 md:ml-32 sm:mt-0 sm:col-span-2"><%= form.text_field :current_weight, class: "form-input rounded-md" %></dd>
               </div>
               <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt class="text-sm font-medium text-gray-500">Fitness Goal</dt>
-                <dd class="mt-1 text-sm text-gray-900 md:ml-32 sm:mt-0 sm:col-span-2"><%= form.text_field :fitness_goal, class: "form-input" %></dd>
+                <dt class="text-sm font-medium text-gray-500 place-content-center">Workouts per week</dt>
+                <dd class="mt-1 text-sm text-gray-900 md:ml-32 sm:mt-0 sm:col-span-2"><%= form.text_field :activity_level, class: "form-input rounded-md" %></dd>
+              </div>
+              <div class="bg-emerald-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500 place-content-center">Workout Type</dt>
+                <dd class="mt-1 text-sm text-gray-900 md:ml-32 sm:mt-0 sm:col-span-2"><%= form.text_field :workout_type, class: "form-input rounded-md" %></dd>
               </div>
               <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt class="text-sm font-medium text-gray-500">Food Preferences</dt>
-                <dd class="mt-1 text-sm text-gray-900 md:ml-32 sm:mt-0 sm:col-span-2"><%= form.text_field :food_preferences, class: "form-input" %></dd>
-              </div>
-              <div class="bg-purple-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt class="text-sm font-medium text-gray-500">Amount of Meals per day</dt>
-                <dd class="mt-1 text-sm text-gray-900 md:ml-32 sm:mt-0 sm:col-span-2"><%= form.text_field :count_meals, class: "form-input" %></dd>
+                <dt class="text-sm font-medium text-gray-500 place-content-center">Fitness Goal</dt>
+                <dd class="mt-1 text-sm text-gray-900 md:ml-32 sm:mt-0 sm:col-span-2"><%= form.text_field :fitness_goal, class: "form-input rounded-md" %></dd>
               </div>
               <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt class="text-sm font-medium text-gray-500">Snacks</dt>
+                <dt class="text-sm font-medium text-gray-500 place-content-center">Food Preferences</dt>
+                <dd class="mt-1 text-sm text-gray-900 md:ml-32 sm:mt-0 sm:col-span-2"><%= form.text_field :food_preferences, class: "form-input rounded-md" %></dd>
+              </div>
+              <div class="bg-emerald-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500 place-content-center">Amount of Meals per day</dt>
+                <dd class="mt-1 text-sm text-gray-900 md:ml-32 sm:mt-0 sm:col-span-2"><%= form.text_field :count_meals, class: "form-input rounded-md" %></dd>
+              </div>
+              <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500 place-content-center">Snacks</dt>
                 <dd class="mt-1 text-sm text-gray-900 md:ml-32 sm:mt-0 sm:col-span-2">
                   <%= form.radio_button :snacks, true, class: "form-radio" %> Yes
                   <%= form.radio_button :snacks, false, class: "form-radio" %> No
@@ -52,19 +52,19 @@
             </dl>
           </div>
           <div class="p-10 text-center">
-            <%= form.submit "Update Data", class: "transition duration-300 ease-in-out bg-transparent text-purple-700 border border-purple-700 hover:bg-purple-800 hover:text-white py-2 px-4 rounded-lg" %>
+            <%= form.submit "Update Data", class: "transition duration-300 ease-in-out bg-transparent text-emerald-700 border border-emerald-700 hover:bg-emerald-800 hover:text-white py-2 px-4 rounded-lg" %>
           </div>
         </div>
       <% end %>
     <% else %>
       <div class="bg-white overflow-hidden sm:rounded-lg mb-10 shadow-lg">
         <div class="px-4 py-5 sm:px-6 flex justify-between items-center">
-          <h3 class="text-lg leading-6 font-medium text-purple-700">Personal Information</h3>
-          <%= button_to "Edit Data", edit_user_datum_path(@user_data), method: :get, class: "transition duration-300 ease-in-out bg-transparent text-purple-700 border border-purple-700 hover:bg-purple-800 hover:text-white py-2 px-4 rounded-lg" %>
+          <h3 class="text-lg leading-6 font-medium text-emerald-700">Personal Information</h3>
+          <%= button_to "Edit Data", edit_user_datum_path(@user_data), method: :get, class: "transition duration-300 ease-in-out bg-transparent text-emerald-700 border border-emerald-700 hover:bg-emerald-800 hover:text-white py-2 px-4 rounded-lg" %>
         </div>
         <div class="border-t border-gray-20">
           <dl class="divide-y divide-gray-200">
-            <div class="bg-purple-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <div class="bg-emerald-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
               <dt class="text-sm font-medium text-gray-500">Age</dt>
               <dd class="mt-1 text-sm text-gray-900 md:ml-32 sm:mt-0 sm:col-span-2"><%= @user_data.age %></dd>
             </div>
@@ -72,7 +72,7 @@
               <dt class="text-sm font-medium text-gray-500">Gender</dt>
               <dd class="mt-1 text-sm text-gray-900 md:ml-32 sm:mt-0 sm:col-span-2"><%= @user_data.gender %></dd>
             </div>
-            <div class="bg-purple-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <div class="bg-emerald-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
               <dt class="text-sm font-medium text-gray-500">Current Weight</dt>
               <dd class="mt-1 text-sm text-gray-900 md:ml-32 sm:mt-0 sm:col-span-2"><%= @user_data.current_weight %> lbs</dd>
             </div>
@@ -80,7 +80,7 @@
               <dt class="text-sm font-medium text-gray-500">Workouts per week</dt>
               <dd class="mt-1 text-sm text-gray-900 md:ml-32 sm:mt-0 sm:col-span-2"><%= @user_data.activity_level %></dd>
             </div>
-            <div class="bg-purple-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <div class="bg-emerald-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
               <dt class="text-sm font-medium text-gray-500">Workout Type</dt>
               <dd class="mt-1 text-sm text-gray-900 md:ml-32 sm:mt-0 sm:col-span-2"><%= @user_data.workout_type %></dd>
             </div>
@@ -88,7 +88,7 @@
               <dt class="text-sm font-medium text-gray-500">Fitness Goal</dt>
               <dd class="mt-1 text-sm text-gray-900 md:ml-32 sm:mt-0 sm:col-span-2"><%= @user_data.fitness_goal %></dd>
             </div>
-            <div class="bg-purple-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <div class="bg-emerald-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
               <dt class="text-sm font-medium text-gray-500">Food Preferences</dt>
               <dd class="mt-1 text-sm text-gray-900 md:ml-32 sm:mt-0 sm:col-span-2"><%= @user_data.food_preferences %></dd>
             </div>
@@ -96,14 +96,14 @@
               <dt class="text-sm font-medium text-gray-500">Amount of Meals per day</dt>
               <dd class="mt-1 text-sm text-gray-900 md:ml-32 sm:mt-0 sm:col-span-2"><%= @user_data.count_meals %></dd>
             </div>
-            <div class="bg-purple-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <div class="bg-emerald-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
               <dt class="text-sm font-medium text-gray-500">Snacks</dt>
               <dd class="mt-1 text-sm text-gray-900 md:ml-32 sm:mt-0 sm:col-span-2"><%= @user_data.snacks ? 'Yes' : 'No' %></dd>
             </div>
           </dl>
         </div>
         <div class="p-10 text-center">
-          <%= button_to "Generate Meal Plan", meal_plans_path, method: :post, class: "transition duration-300 ease-in-out bg-transparent text-purple-700 border border-purple-700 hover:bg-purple-800 hover:text-white py-2 px-4 rounded-lg" %>
+          <%= button_to "Generate Meal Plan", meal_plans_path, method: :post, class: "transition duration-300 ease-in-out bg-transparent text-emerald-700 border border-emerald-700 hover:bg-emerald-800 hover:text-white py-2 px-4 rounded-lg" %>
         </div>
       </div>
     <% end %>

@@ -1,4 +1,18 @@
-<div class="flex flex-col items-center justify-center h-screen">
-  <h1 class="font-bold text-4xl mb-8">Welcome to the Home Page</h1>
-  <%= link_to "Create User Data", new_user_datum_path, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+<%# Hero Section %>
+<div class="my-10 w-2/3 pl-8 pt-20">
+  <h1 class="font-black text-8xl leading-tight bg-gradient-to-r from-lime-500 via-lime-700 to-emerald-900 text-transparent bg-clip-text">Because a<br> Six Pack is done in the Kitchen</h1>
+  <p class="text-2xl mt-4 mb-10 text-emerald-900">Lets get your meals done right</p>
+  <%= link_to "Get Started", new_user_session_path, class: "bg-emerald-900 hover:bg-lime-700 text-white font-bold text-xl py-3 px-6 rounded-lg my-10" %>
 </div>
+<div class="w-full h-screen my-20">
+  <%= image_tag "wave.svg", class: "w-full h-full object-cover" %>
+</div>
+
+
+
+
+
+
+
+
+<%#= link_to "Create User Data", new_user_datum_path, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
