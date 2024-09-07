@@ -10,6 +10,9 @@ body {
   .text-shadow-lg {
     text-shadow: 6px 6px 9px rgba(168, 228, 16, 0.631), 8px 8px 9px rgba(255, 255, 255, 0.727);
   }
+  .animated-container {
+    left: -400px;
+  }
 }
 
 /*
