@@ -24,7 +24,7 @@ class MealPlansController < ApplicationController
     @meal_plan.nutrition_plan = nutrition_plan
 
     if @meal_plan.save
-      redirect_to user_data_path(current_user.user_datum), notice: "Meal plan was successfully created."
+      redirect_to meal_plan_path(@meal_plan), notice: "Meal plan was successfully created."
     else
       redirect_to user_data_index_path, alert: "Failed to create meal plan."
     end

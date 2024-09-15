@@ -37,7 +37,7 @@ class UserDataController < ApplicationController
         @user_data.user = current_user
         if @user_data.save
           session.delete(:user_data)
-          redirect_to user_data_path(@user_data), notice: "User data was successfully created."
+          redirect_to user_data_path, notice: "User data was successfully created."
         else
           render :new, status: :unprocessable_entity
         end
